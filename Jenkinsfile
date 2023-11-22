@@ -63,7 +63,7 @@ pipeline {
                // #}
             //#}
             steps {
-                #sh 'jfrog rt upload --url http://54.183.244.10:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar.jar example-repo-local/'
+               // #sh 'jfrog rt upload --url http://54.183.244.10:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar.jar example-repo-local/'
 				sh curl -X PUT -u admin -T kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar http://54.183.244.10:8082/artifactory/example-repo-local
             }
         }
