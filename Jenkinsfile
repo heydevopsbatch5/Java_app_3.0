@@ -56,12 +56,12 @@ pipeline {
         }
 
         stage('Upload to ARTIFACTORY') {
-            #agent {
-               # docker {
-                   # image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
-                    #reuseNode true
-                #}
-            #}
+            //agent {
+         // # docker {
+           //        # image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
+             //       #reuseNode true
+               // #}
+            //#}
             steps {
                 #sh 'jfrog rt upload --url http://54.183.244.10:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar.jar example-repo-local/'
 				sh curl -X PUT -u admin -T kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar http://54.183.244.10:8082/artifactory/example-repo-local
